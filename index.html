@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Little Guys - Fan Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0d1b35;
+  --navy2:#111f3e;
+  --yellow:#f5c518;
+  --amber:#f7a800;
+  --orange-red:#d93d1a;
+  --red:#c0220a;
+  --cream:#fff9ee;
+  --blue:#1a6fd4;
+  --green:#1aaa44;
+  --ink:#111;
+  --white:#fff;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito',sans-serif;
+  background:var(--navy);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+/* ── NAV ── */
+.nav{
+  position:sticky;top:0;z-index:200;
+  background:var(--navy2);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem 1.8rem;
+  border-bottom:3px solid #1e2f55;
+}
+.nav-logo{
+  font-family:'Fredoka One',cursive;
+  font-size:1.5rem;
+  text-decoration:none;
+  display:flex;align-items:center;gap:3px;
+  letter-spacing:.5px;
+}
+.nav-logo .t{color:var(--blue)}
+.nav-logo .l{color:var(--yellow)}
+.nav-logo .g{color:var(--green)}
+
+.nav-links{display:flex;gap:.2rem;align-items:center;flex-wrap:wrap}
+.nav-links a{
+  font-family:'Fredoka One',cursive;
+  font-size:1rem;
+  text-decoration:none;
+  padding:.35rem .9rem;
+  border-radius:10px;
+  transition:background .15s;
+  letter-spacing:.3px;
+}
+.nav-links a.c1{color:var(--blue)}
+.nav-links a.c2{color:var(--orange-red)}
+.nav-links a.c3{color:var(--yellow)}
+.nav-links a.c4{color:var(--green)}
+.nav-links a:hover{background:rgba(255,255,255,.08)}
+
+.nav-cta{
+  font-family:'Fredoka One',cursive;
+  font-size:.95rem;
+  background:var(--yellow);
+  color:var(--ink)!important;
+  padding:.4rem 1.1rem!important;
+  border-radius:12px!important;
+  border:2.5px solid var(--ink);
+  box-shadow:3px 3px 0 var(--ink);
+  transition:transform .15s,box-shadow .15s!important;
+}
+.nav-cta:hover{transform:translate(-1px,-1px)!important;box-shadow:4px 4px 0 var(--ink)!important}
+
+/* ── HERO ── */
+.hero{
+  background:var(--navy);
+  min-height:92vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:5rem 1.5rem 3rem;
+  position:relative;
+  overflow:hidden;
+}
+
+/* floating dots like their site */
+.dot{
+  position:absolute;
+  border-radius:50%;
+  opacity:.85;
+  animation:float 4s ease-in-out infinite alternate;
+}
+.dot1{width:18px;height:18px;background:var(--yellow);top:18%;left:8%;animation-delay:0s}
+.dot2{width:14px;height:14px;background:var(--orange-red);top:25%;right:10%;animation-delay:.6s}
+.dot3{width:11px;height:11px;background:var(--blue);top:55%;left:5%;animation-delay:1.1s}
+.dot4{width:16px;height:16px;background:var(--orange-red);bottom:30%;right:7%;animation-delay:.3s}
+.dot5{width:10px;height:10px;background:var(--yellow);bottom:20%;left:15%;animation-delay:.9s}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-18px)}}
+
+.hero-fan-tag{
+  display:inline-block;
+  font-family:'Fredoka One',cursive;
+  font-size:.8rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--yellow);
+  border:2px solid var(--yellow);
+  padding:.3rem 1rem;
+  border-radius:50px;
+  margin-bottom:2rem;
+  opacity:.85;
+}
+
+/* rainbow-outline card like their cream card */
+.hero-card{
+  background:var(--cream);
+  border-radius:28px;
+  border:3.5px solid var(--ink);
+  box-shadow:
+    0 0 0 3.5px var(--ink),
+    6px 6px 0 var(--ink);
+  padding:2.8rem 2.2rem 2.5rem;
+  max-width:560px;
+  width:100%;
+  position:relative;
+  margin-bottom:2.5rem;
+}
+/* rainbow top border */
+.hero-card::before{
+  content:'';
+  position:absolute;
+  top:-5px;left:10px;right:10px;height:5px;
+  background:linear-gradient(90deg,#e63946,#f4a261,#2a9d8f,#457b9d,#9b59ff,#e63946);
+  border-radius:4px 4px 0 0;
+}
+
+.hero-card h1{
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(2rem,7vw,3.4rem);
+  line-height:1.05;
+  margin-bottom:.6rem;
+  letter-spacing:.5px;
+}
+.hero-card h1 .w1{color:var(--blue)}
+.hero-card h1 .w2{color:var(--yellow);-webkit-text-stroke:1.5px var(--ink)}
+.hero-card h1 .w3{color:var(--orange-red)}
+
+.hero-card p{
+  font-size:1rem;
+  line-height:1.7;
+  color:#333;
+  margin-bottom:1.8rem;
+}
+.hero-card p strong{
+  color:var(--blue);
+}
+.hero-card p em{
+  font-style:normal;
+  color:var(--orange-red);
+  font-weight:800;
+}
+
+.hero-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.btn{
+  font-family:'Fredoka One',cursive;
+  font-size:1rem;
+  letter-spacing:.3px;
+  padding:.65rem 1.6rem;
+  border-radius:14px;
+  border:2.5px solid var(--ink);
+  text-decoration:none;
+  display:inline-flex;align-items:center;gap:.4rem;
+  box-shadow:3px 3px 0 var(--ink);
+  transition:transform .15s,box-shadow .15s;
+  cursor:pointer;
+}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.btn:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-white{background:#fff;color:var(--ink)}
+
+/* ── TICKER ── */
+.ticker{
+  background:var(--orange-red);
+  padding:.6rem 0;
+  overflow:hidden;
+  border-top:3px solid var(--ink);
+  border-bottom:3px solid var(--ink);
+}
+.ticker-inner{
+  display:flex;width:max-content;
+  animation:tick 20s linear infinite;
+}
+.ticker-inner span{
+  font-family:'Fredoka One',cursive;
+  font-size:1rem;letter-spacing:.8px;
+  color:#fff;padding:0 2rem;white-space:nowrap;
+}
+.ticker-inner .sep{color:var(--yellow);padding:0!important}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SECTION SHARED ── */
+.section{padding:5rem 1.5rem}
+.section-inner{max-width:1050px;margin:0 auto}
+
+.section-label{
+  font-family:'Fredoka One',cursive;
+  font-size:.78rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--yellow);margin-bottom:.5rem;display:block;
+}
+.section-title{
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(2rem,5vw,3rem);
+  line-height:1.05;margin-bottom:.8rem;
+  letter-spacing:.3px;
+}
+.section-sub{font-size:1rem;line-height:1.72;color:rgba(255,255,255,.7);max-width:500px}
+
+/* ── ABOUT (yellow bg) ── */
+.about-section{
+  background:var(--amber);
+  border-top:3px solid var(--ink);
+  border-bottom:3px solid var(--ink);
+}
+.about-section .section-label{color:var(--orange-red)}
+.about-section .section-title{color:var(--ink)}
+.about-section .section-sub{color:#4a2800}
+
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3.5rem;align-items:start;margin-top:2.5rem;
+}
+.about-text p{
+  font-size:.97rem;line-height:1.78;color:#3a2000;margin-bottom:1rem;
+}
+.about-text p b{
+  font-weight:800;color:var(--red);
+}
+
+/* stacked polaroids */
+.polaroid-wrap{position:relative;height:420px}
+.pol{
+  position:absolute;
+  background:#fff;
+  border:3px solid var(--ink);
+  padding:.8rem .8rem 2.8rem;
+  box-shadow:5px 5px 0 var(--ink);
+  width:210px;
+  cursor:pointer;
+  transition:transform .25s,box-shadow .25s;
+}
+.pol:hover{z-index:10!important;transform:scale(1.06) rotate(0deg)!important;box-shadow:8px 8px 0 var(--ink)!important}
+.pol:nth-child(1){transform:rotate(-4deg);top:0;left:0;z-index:3}
+.pol:nth-child(2){transform:rotate(3.5deg);top:30px;left:50px;z-index:2}
+.pol:nth-child(3){transform:rotate(-1deg);top:60px;left:20px;z-index:1}
+.pol-face{
+  width:100%;aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;
+  font-size:4.5rem;border:2px solid #eee;
+}
+.pol:nth-child(1) .pol-face{background:#fff3cd}
+.pol:nth-child(2) .pol-face{background:#cce5ff}
+.pol:nth-child(3) .pol-face{background:#d4edda}
+.pol-cap{font-size:.82rem;color:#555;text-align:center;margin-top:.5rem;font-weight:700}
+
+@media(max-width:700px){
+  .about-grid{grid-template-columns:1fr}
+  .polaroid-wrap{height:260px;margin-top:2rem}
+  .pol{width:160px}
+  .pol:nth-child(2){left:35px;top:20px}
+  .pol:nth-child(3){left:15px;top:40px}
+}
+
+/* ── GALLERY (navy) ── */
+.gallery-section{background:var(--navy);padding:5rem 1.5rem}
+.gallery-section .section-label{color:var(--yellow)}
+.gallery-section .section-title{color:#fff}
+
+.gallery-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  flex-wrap:wrap;gap:1.2rem;margin-bottom:2.2rem;
+}
+.filt-row{display:flex;gap:.4rem;flex-wrap:wrap}
+.filt{
+  font-family:'Fredoka One',cursive;
+  font-size:.85rem;letter-spacing:.3px;
+  padding:.3rem .85rem;
+  border-radius:10px;
+  border:2px solid rgba(255,255,255,.25);
+  background:transparent;color:rgba(255,255,255,.6);
+  cursor:pointer;transition:all .15s;
+}
+.filt:hover,.filt.on{
+  border-color:var(--yellow);
+  background:rgba(245,197,24,.12);
+  color:var(--yellow);
+}
+
+.nft-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(210px,1fr));
+  gap:1.2rem;
+}
+.nft-card{
+  background:#fff;
+  border:3px solid var(--ink);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:4px 4px 0 var(--ink);
+  transition:transform .2s,box-shadow .2s;
+  cursor:pointer;
+}
+.nft-card:hover{transform:translate(-3px,-3px);box-shadow:7px 7px 0 var(--ink)}
+.nft-face{
+  height:250px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:4.5rem;position:relative;
+  border-bottom:2.5px solid var(--ink);
+}
+.nft-card:nth-child(1) .nft-face{background:#fff3cd}
+.nft-card:nth-child(2) .nft-face{background:#cce5ff}
+.nft-card:nth-child(3) .nft-face{background:#d4edda}
+.nft-card:nth-child(4) .nft-face{background:#f8d7da}
+.nft-card:nth-child(5) .nft-face{background:#e2d9f3}
+.nft-card:nth-child(6) .nft-face{background:#fce4d6}
+
+.rarity{
+  position:absolute;top:9px;right:9px;
+  font-family:'Fredoka One',cursive;
+  font-size:.68rem;letter-spacing:.5px;
+  padding:2px 9px;border-radius:8px;
+  border:1.5px solid var(--ink);
+}
+.rc{background:#e9ecef;color:#555}
+.rr{background:#cce5ff;color:#004085}
+.re{background:#e2d9f3;color:#4b0082}
+.rl{background:#fff3cd;color:#856404}
+
+.nft-info{padding:1rem 1.1rem}
+.nft-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}
+.nft-name{font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--ink)}
+.nft-num{font-size:.7rem;color:#888;font-weight:700}
+.nft-tags{display:flex;gap:.35rem;flex-wrap:wrap}
+.ntag{
+  font-size:.67rem;font-weight:700;
+  background:#f3f4f6;color:#555;
+  padding:2px 8px;border-radius:6px;
+  border:1px solid #ddd;
+}
+
+/* hover reveal */
+.nft-hover{
+  position:absolute;inset:0;
+  background:rgba(13,27,53,.75);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .2s;
+}
+.nft-card:hover .nft-hover{opacity:1}
+.nft-hover span{
+  font-family:'Fredoka One',cursive;
+  font-size:.95rem;color:#fff;
+  background:rgba(0,0,0,.5);
+  padding:.4rem 1rem;border-radius:8px;
+  border:2px solid rgba(255,255,255,.3);
+}
+
+/* ── ROADMAP (cream card style) ── */
+.roadmap-section{
+  background:var(--amber);
+  border-top:3px solid var(--ink);
+  border-bottom:3px solid var(--ink);
+  padding:5rem 1.5rem;
+}
+.roadmap-section .section-label{color:var(--red)}
+.roadmap-section .section-title{color:var(--ink)}
+.roadmap-section .section-sub{color:#4a2800;max-width:480px}
+
+.rm-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:1.1rem;margin-top:2.5rem;
+}
+.rm-card{
+  background:#fff;
+  border:2.5px solid var(--ink);
+  border-radius:18px;
+  padding:1.5rem;
+  box-shadow:4px 4px 0 var(--ink);
+  position:relative;
+  overflow:hidden;
+  transition:transform .2s,box-shadow .2s;
+}
+.rm-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.rm-stripe{
+  height:5px;width:100%;
+  position:absolute;top:0;left:0;
+}
+.rm-done .rm-stripe{background:var(--green)}
+.rm-now .rm-stripe{background:var(--yellow)}
+.rm-soon .rm-stripe{background:#ccc}
+
+.rm-phase{
+  font-family:'Fredoka One',cursive;
+  font-size:.72rem;letter-spacing:2px;text-transform:uppercase;
+  color:#888;margin-bottom:.35rem;margin-top:.4rem;
+}
+.rm-title{
+  font-family:'Fredoka One',cursive;
+  font-size:1.15rem;color:var(--ink);margin-bottom:.4rem;
+  text-align: center;
+}
+.rm-desc{font-size:.85rem;color:#444;line-height:1.62}
+.rm-badge{
+  display:inline-block;margin-top:.75rem;
+  font-family:'Fredoka One',cursive;font-size:.75rem;
+  padding:2px 10px;border-radius:8px;border:1.5px solid var(--ink);
+}
+.rm-done .rm-badge{background:#d4edda;color:#155724}
+.rm-now .rm-badge{background:#fff3cd;color:#856404}
+.rm-soon .rm-badge{background:#f3f4f6;color:#888}
+
+.rm-full{grid-column:1/-1}
+
+/* ── SOCIALS (yellow like their contact section) ── */
+.socials-section{
+  background:var(--yellow);
+  border-top:3px solid var(--ink);
+  padding:5rem 1.5rem;
+}
+.socials-section .section-label{color:var(--orange-red)}
+.socials-section .section-title{color:var(--ink)}
+.socials-section .section-sub{color:#4a2800;max-width:460px}
+
+/* white rounded social icon buttons - exactly like their site */
+.soc-grid{
+  display:flex;flex-wrap:wrap;gap:1.1rem;
+  margin-top:2.5rem;
+}
+.soc-btn{
+  display:flex;align-items:center;gap:.9rem;
+  background:#fff;
+  border:2.5px solid var(--ink);
+  border-radius:18px;
+  padding:1rem 1.4rem;
+  text-decoration:none;color:var(--ink);
+  font-weight:700;
+  box-shadow:4px 4px 0 var(--ink);
+  transition:transform .15s,box-shadow .15s;
+  min-width:185px;
+}
+.soc-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.soc-ico{font-size:1.5rem;flex-shrink:0}
+.soc-lbl{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888}
+.soc-handle{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--ink)}
+
+/* fan note */
+.fan-note{
+  margin-top:3rem;
+  background:var(--ink);
+  color:#fff;
+  border-radius:20px;
+  border:2.5px solid var(--ink);
+  padding:2rem;
+  max-width:600px;
+  box-shadow:5px 5px 0 rgba(0,0,0,.3);
+}
+.fan-note h3{
+  font-family:'Fredoka One',cursive;
+  font-size:1.3rem;color:var(--yellow);margin-bottom:.5rem;
+}
+.fan-note p{font-size:.9rem;line-height:1.7;color:rgba(255,255,255,.8)}
+.fan-note a{
+  display:inline-flex;align-items:center;gap:.4rem;
+  margin-top:1.1rem;
+  background:var(--yellow);color:var(--ink);
+  font-family:'Fredoka One',cursive;font-size:.95rem;
+  padding:.55rem 1.3rem;border-radius:10px;
+  border:2px solid var(--ink);
+  text-decoration:none;
+  box-shadow:3px 3px 0 rgba(255,255,255,.3);
+  transition:transform .15s;
+}
+.fan-note a:hover{transform:translate(-1px,-1px)}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--orange-red);
+  border-top:3px solid var(--ink);
+  padding:2rem 1.8rem;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+}
+.foot-logo{
+  font-family:'Fredoka One',cursive;
+  font-size:1.4rem;
+  display:flex;align-items:center;gap:2px;
+}
+.foot-logo .t{color:var(--blue)}
+.foot-logo .l{color:var(--yellow)}
+.foot-logo .g{color:#fff}
+
+.foot-note{font-size:.78rem;color:rgba(255,255,255,.75);margin-top:.2rem}
+.foot-note a{color:#fff}
+.foot-links{display:flex;gap:1.2rem;flex-wrap:wrap}
+.foot-links a{
+  font-family:'Fredoka One',cursive;font-size:.9rem;
+  color:rgba(255,255,255,.75);text-decoration:none;transition:color .2s;
+}
+.foot-links a:hover{color:#fff}
+
+/* social icon buttons in footer - square white like theirs */
+.foot-soc{display:flex;gap:.6rem;margin-top:.5rem}
+.foot-soc-btn{
+  width:44px;height:44px;
+  background:#fff;border:2px solid var(--ink);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;font-size:1.1rem;
+  box-shadow:2px 2px 0 var(--ink);
+  transition:transform .15s,box-shadow .15s;
+  color:var(--ink);
+}
+.foot-soc-btn:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .nav{padding:.65rem 1rem}
+  .nav-links a:not(.nav-cta){display:none}
+  .hero{padding:4rem 1.1rem 2.5rem}
+  .hero-card{padding:2rem 1.3rem}
+  .hero-card h1{font-size:2.2rem}
+  .section,.gallery-section,.roadmap-section,.socials-section{padding:3.5rem 1.1rem}
+  .nft-grid{grid-template-columns:1fr 1fr}
+  .nft-face{height:155px;font-size:3.5rem}
+  footer{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="t">T</span><span class="l">L</span><span class="g">G</span>
+    &nbsp;fan site
+  </a>
+  <div class="nav-links">
+    <a href="#about" class="c1">About</a>
+    <a href="#gallery" class="c2">Gallery</a>
+    <a href="#roadmap" class="c3">Roadmap</a>
+    <a href="community.html" class="nav-cta">Community →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="dot dot1"></div>
+  <div class="dot dot2"></div>
+  <div class="dot dot3"></div>
+  <div class="dot dot4"></div>
+  <div class="dot dot5"></div>
+
+  <div class="hero-fan-tag">👀 unofficial fan site · made with love</div>
+
+  <div class="hero-card">
+    <h1>
+      <span class="w1">Step Inside</span><br/>
+      <span class="w2">Their</span> <span class="w3">World.</span>
+    </h1>
+    <p>
+      Step inside our world of adventure - or to be more precise, <strong>The Little Guys'</strong> world. A world filled with fun and joy for both children and adults. A world where you'll meet the cutest characters with <em>attitude.</em>
+      <br/><br/>
+      I'm just a fan who believes in this project with everything. Get ready for your next adventure...
+    </p>
+    <div class="hero-btns">
+      <a href="#gallery" class="btn btn-blue">See the Characters</a>
+      <a href="https://www.thelittleguys.io" target="_blank" class="btn btn-yellow">Official Site ↗</a>
+      <a href="community.html" class="btn btn-white">Community →</a>
+    </div>
+  </div>
+
+  
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>THE LITTLE GUYS</span><span class="sep">★</span>
+    <span>10,000 CHARACTERS</span><span class="sep">★</span>
+    <span>TIME STUDIOS PARTNER</span><span class="sep">★</span>
+    <span>UNBOX THE UNEXPECTED</span><span class="sep">★</span>
+    <span>FAMILY FIRST</span><span class="sep">★</span>
+    <span>FAN SUPPORTED</span><span class="sep">★</span>
+    <span>THE LITTLE GUYS</span><span class="sep">★</span>
+    <span>10,000 CHARACTERS</span><span class="sep">★</span>
+    <span>TIME STUDIOS PARTNER</span><span class="sep">★</span>
+    <span>UNBOX THE UNEXPECTED</span><span class="sep">★</span>
+    <span>FAMILY FIRST</span><span class="sep">★</span>
+    <span>FAN SUPPORTED</span><span class="sep">★</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about-section section">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <span class="section-label">About the Project</span>
+        <h2 class="section-title">Unbox The Unexpected.</h2>
+        <p>Step inside our world of adventure…..or to be more precise<br><b>The Little Guys´ world.</b><br> A world filled with fun and joy for both children and adults.</p>
+        <p> A world where you´ll meet the cutest characters with attitude.<br> A world where there´s room for music, animations and hours of family fun.</p>
+        <p><b>Get ready for your next adventure…..</b></p>
+      </div>
+
+      <div class="reveal" style="transition-delay:.12s">
+        <div class="polaroid-wrap">
+          <div class="pol">
+            <div class="pol-face"><img src="sneakpeak8.png" alt="TheLittleGuys" width="100%" height="100%"></div>
+            <div class="pol-cap">DON <br> Founder</div>
+          </div>
+          <div class="pol">
+            <div class="pol-face"><img src="Prof.png" alt="TheLittleGuys" width="100%" height="100%"></div>
+            <div class="pol-cap">PROF<br> Co-Founder</div>
+          </div>
+          <div class="pol">
+            <div class="pol-face"><img src="Haizeel.png" alt="TheLittleGuys" width="100%" height="100%"></div>
+            <div class="pol-cap">HAIZEEL<br>Artist</div>
+          </div>
+          <div class="pol">
+            <div class="pol-face"><img src="Nawa.png" alt="TheLittleGuys" width="100%" height="100%"></div>
+            <div class="pol-cap">NAWA<br>Dev</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery-section">
+  <div class="section-inner">
+    <div class="gallery-head reveal">
+      <div>
+        <span class="section-label">Sneak Peek</span>
+        <h2 class="section-title" style="color:#fff">Meet the Guys 👀</h2>
+      </div>
+      <div class="filt-row">
+        <button class="filt on">All</button>
+        <button class="filt">Common</button>
+        <button class="filt">Rare</button>
+        <button class="filt">Epic</button>
+        <button class="filt">Legendary</button>
+      </div>
+    </div>
+
+    <div class="nft-grid">
+      <div class="nft-card reveal">
+        <div class="nft-face"><img src="sneakpeak1.jpg" alt="TheLittleGuys" width="100%" height="100%"><span class="rarity rc">Common</span><div class="nft-hover"><span>OpenSea - Coming Soon →</span></div></div>
+      </div>
+      <div class="nft-card reveal" style="transition-delay:.06s">
+        <div class="nft-face"><img src="sneakpeak2.png" alt="TheLittleGuys" width="100%" height="100%"><span class="rarity rr">Rare</span><div class="nft-hover"><span>OpenSea - Coming Soon →</span></div></div>
+      </div>
+      <div class="nft-card reveal" style="transition-delay:.12s">
+        <div class="nft-face"><img src="sneakpeak3.png" alt="TheLittleGuys" width="100%" height="100%"><span class="rarity rr">Rare</span><div class="nft-hover"><span>OpenSea - Coming Soon →</span></div></div>
+      </div>
+      <div class="nft-card reveal" style="transition-delay:.18s">
+        <div class="nft-face"><img src="sneakpeak4.png" alt="TheLittleGuys" width="100%" height="100%"><span class="rarity re">Epic</span><div class="nft-hover"><span>OpenSea - Coming Soon →</span></div></div>
+      </div>
+      <div class="nft-card reveal" style="transition-delay:.24s">
+        <div class="nft-face"><img src="sneakpeak5.png" alt="TheLittleGuys" width="100%" height="100%"><span class="rarity re">Epic</span><div class="nft-hover"><span>OpenSea - Coming Soon →</span></div></div>
+      </div>
+      <div class="nft-card reveal" style="transition-delay:.3s">
+        <div class="nft-face"><img src="sneakpeak6.png" alt="TheLittleGuys" width="100%" height="100%"><span class="rarity rl">Legendary</span><div class="nft-hover"><span>OpenSea - Coming Soon →</span></div></div>
+      </div>
+      <div class="nft-card reveal" style="transition-delay:.3s">
+        <div class="nft-face"><img src="sneakpeak7.png" alt="TheLittleGuys" width="100%" height="100%"><span class="rarity rl">Legendary</span><div class="nft-hover"><span>OpenSea - Coming Soon →</span></div></div>
+      </div>
+      <div class="nft-card reveal" style="transition-delay:.3s">
+        <div class="nft-face"><img src="sneakpeak8.png" alt="TheLittleGuys" width="100%" height="100%"><span class="rarity rl">Rare</span><div class="nft-hover"><span>OpenSea - Coming Soon →</span></div></div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap" class="roadmap-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">The Journey</span>
+      <h2 class="section-title">Where they've been &<br/>where they're heading</h2>
+      <p class="section-sub">A fan's breakdown of the project timeline - pulled from what's publicly known.</p>
+    </div>
+    <div class="rm-grid">
+      <div class="rm-card rm-done reveal" style="transition-delay:.06s">
+        <div class="rm-stripe"></div>
+        <div class="rm-phase">Phase 01</div>
+        <div class="rm-title">📣<br> Community</div>
+        <div class="rm-desc">Build and grow an active holder community across Discord & Twitter<br>
+          Regular announcements, AMAs, and community calls<br>
+          Reward early supporters with exclusive access and perks<br>
+          Collaborative voting on project decisions<br>
+          Create a sense of belonging around the Little Guys brand<br></div>
+        <span class="rm-badge">✓ Done</span>
+      </div>
+      <div class="rm-card rm-done reveal" style="transition-delay:.12s">
+        <div class="rm-stripe"></div>
+        <div class="rm-phase">Phase 02</div>
+        <div class="rm-title">🖼️<br> NFT</div>
+        <div class="rm-desc">10,000 Little Guys minted on-chain as the core collection<br>
+          Marketplace listings on OpenSea and leading platforms<br>
+          NFT staking integrated into browser game (Playside)<br>
+          Second-gen drops planned for ecosystem expansion<br>
+          Rarity traits and holder utility embedded into each token</div>
+        <span class="rm-badge">✓ Done</span>
+      </div>
+      <div class="rm-card rm-done reveal" style="transition-delay:.18s">
+        <div class="rm-stripe"></div>
+        <div class="rm-phase">Phase 03</div>
+        <div class="rm-title">🤝<br>Partnership</div>
+        <div class="rm-desc">Emmy Award-winning TIME Studios signed to produce the animated series<br>
+          Collaborations with BAYC, Cool Cats, and CASETiFY<br>
+          Cross-project activations and co-branded events<br>
+          Corporate brand deals to grow IP reach<br>
+          Licensing deals tied to global rollout</div>
+        <span class="rm-badge">✓ Done</span>
+      </div>
+      <div class="rm-card rm-now reveal" style="transition-delay:.24s">
+        <div class="rm-stripe"></div>
+        <div class="rm-phase">Phase 04 - Now</div>
+        <div class="rm-title">🎪<br>Event</div>
+        <div class="rm-desc">IRL meetups and holder-exclusive experiences<br>
+          Presence at major Web3 and pop culture conventions<br>
+          Virtual events, game tournaments, and leaderboard competitions<br>
+          Branded stadium/arena activations for mainstream exposure<br>
+          Series launch events tied to global animated release</div>
+        <span class="rm-badge">● Active Now</span>
+      </div>
+      <div class="rm-card rm-soon rm-full reveal" style="transition-delay:.3s">
+        <div class="rm-stripe"></div>
+        <div class="rm-phase">Phase 05 - Coming</div>
+        <div class="rm-title">Series Launch + Full Ecosystem</div>
+        <div class="rm-desc">The animated series drops publicly. Merch, IRL events, second-gen drops, gaming expansion, and global licensing begin. This is where it hits the mainstream. I'm here for all of it.</div>
+        <span class="rm-badge">◌ Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIALS -->
+<section id="socials" class="socials-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Find Them</span>
+      <h2 class="section-title">Official Channels</h2>
+      <p class="section-sub">Go follow, join the Discord, browse OpenSea. These are the real links.</p>
+    </div>
+    <div class="soc-grid">
+      <a href="https://www.thelittleguys.io" target="_blank" class="soc-btn reveal">
+        <span class="soc-ico">🌐</span>
+        <div><div class="soc-lbl">Website</div><div class="soc-handle">thelittleguys.io</div></div>
+      </a>
+      <a href="https://twitter.com/thelittleguysio" target="_blank" class="soc-btn reveal" style="transition-delay:.06s">
+        <span class="soc-ico">𝕏</span>
+        <div><div class="soc-lbl">Twitter / X</div><div class="soc-handle">@thelittleguysio</div></div>
+      </a>
+      <a href="https://discord.gg/thelittleguys" target="_blank" class="soc-btn reveal" style="transition-delay:.12s">
+        <span class="soc-ico">💬</span>
+        <div><div class="soc-lbl">Discord</div><div class="soc-handle">Join the Squad</div></div>
+      </a>
+      <a href="https://opensea.io/collection/thelittleguysclub" target="_blank" class="soc-btn reveal" style="transition-delay:.18s">
+        <span class="soc-ico">🌊</span>
+        <div><div class="soc-lbl">OpenSea</div><div class="soc-handle">thelittleguysclub</div></div>
+      </a>
+      <a href="mailto:contact@thelittleguys.io" class="soc-btn reveal" style="transition-delay:.24s">
+        <span class="soc-ico">✉️</span>
+        <div><div class="soc-lbl">Email</div><div class="soc-handle">contact@thelittleguys.io</div></div>
+      </a>
+    </div>
+
+    <div class="fan-note reveal" style="transition-delay:.3s">
+      <h3>🤝 This is a fan-made site</h3>
+      <p>Not affiliated with the team - just a supporter who thinks The Little Guys is one of the most genuinely heartfelt projects in this space. Built this to show love, not to imitate.</p>
+      <a href="community.html">Community Page →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="foot-logo">
+      <span class="t">T</span><span class="l">L</span><span class="g">G</span>&nbsp;Fan World
+    </div>
+    <div class="foot-note">Fan site - not affiliated with <a href="https://www.thelittleguys.io" target="_blank">thelittleguys.io</a></div>
+    <div class="foot-soc">
+      <a href="https://twitter.com/thelittleguysio" target="_blank" class="foot-soc-btn" title="X / Twitter">𝕏</a>
+      <a href="https://discord.gg/thelittleguys" target="_blank" class="foot-soc-btn" title="Discord">💬</a>
+    </div>
+  </div>
+  <div class="foot-links">
+    <a href="community.html">Community</a>
+    <a href="#about">About</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#roadmap">Roadmap</a>
+  </div>
+</footer>
+
+<script>
+// ── RARITY FILTER ──
+const rarityMap = {
+  'Common':    'rc',
+  'Rare':      'rr',
+  'Epic':      're',
+  'Legendary': 'rl'
+};
+
+document.querySelectorAll('.filt').forEach(btn => {
+  btn.addEventListener('click', () => {
+    // toggle active button
+    document.querySelectorAll('.filt').forEach(x => x.classList.remove('on'));
+    btn.classList.add('on');
+
+    const label = btn.textContent.trim();
+    const cards = document.querySelectorAll('.nft-card');
+
+    cards.forEach(card => {
+      const raritySpan = card.querySelector('.rarity');
+      if (!raritySpan) return;
+
+      if (label === 'All') {
+        card.style.display = '';
+      } else {
+        const targetClass = rarityMap[label];
+        const matches = raritySpan.classList.contains(targetClass);
+        card.style.display = matches ? '' : 'none';
+      }
+    });
+  });
+});
+
+// ── SCROLL REVEAL ──
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in') });
+}, { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

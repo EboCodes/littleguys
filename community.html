@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Community - The Little Guys Fan Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0d1b35;
+  --navy2:#111f3e;
+  --yellow:#f5c518;
+  --amber:#f7a800;
+  --orange-red:#d93d1a;
+  --red:#c0220a;
+  --cream:#fff9ee;
+  --blue:#1a6fd4;
+  --green:#1aaa44;
+  --ink:#111;
+  --white:#fff;
+  --muted:#9A7860;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--navy);color:var(--ink);overflow-x:hidden}
+
+/* ── NAV ── */
+.nav{
+  position:sticky;top:0;z-index:200;
+  background:var(--navy2);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem 1.8rem;
+  border-bottom:3px solid #1e2f55;
+}
+.nav-logo{font-family:'Fredoka One',cursive;font-size:1.5rem;text-decoration:none;display:flex;align-items:center;gap:3px;letter-spacing:.5px}
+.nav-logo .t{color:var(--blue)}.nav-logo .l{color:var(--yellow)}.nav-logo .g{color:var(--green)}
+.nav-links{display:flex;gap:.2rem;align-items:center;flex-wrap:wrap}
+.nav-links a{font-family:'Fredoka One',cursive;font-size:1rem;text-decoration:none;padding:.35rem .9rem;border-radius:10px;transition:background .15s;letter-spacing:.3px}
+.nav-links a.c1{color:var(--blue)}.nav-links a.c2{color:var(--orange-red)}.nav-links a.c3{color:var(--yellow)}.nav-links a.c4{color:var(--green)}
+.nav-links a:hover{background:rgba(255,255,255,.08)}
+.nav-cta{font-family:'Fredoka One',cursive;font-size:.95rem;background:var(--yellow);color:var(--ink)!important;padding:.4rem 1.1rem!important;border-radius:12px!important;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s!important}
+.nav-cta:hover{transform:translate(-1px,-1px)!important;box-shadow:4px 4px 0 var(--ink)!important}
+
+/* ── PAGE HERO ── */
+.page-hero{
+  background:var(--navy);
+  padding:5.5rem 1.5rem 0;
+  display:flex;flex-direction:column;align-items:center;
+  text-align:center;overflow:hidden;position:relative;
+}
+.dot{position:absolute;border-radius:50%;opacity:.8;animation:float 4s ease-in-out infinite alternate}
+.dot1{width:18px;height:18px;background:var(--yellow);top:20%;left:7%;animation-delay:0s}
+.dot2{width:13px;height:13px;background:var(--orange-red);top:30%;right:9%;animation-delay:.5s}
+.dot3{width:10px;height:10px;background:var(--blue);top:60%;left:5%;animation-delay:1s}
+.dot4{width:15px;height:15px;background:var(--green);bottom:25%;right:6%;animation-delay:.8s}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-16px)}}
+
+.page-tag{
+  display:inline-block;font-family:'Fredoka One',cursive;font-size:.78rem;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--yellow);border:2px solid var(--yellow);
+  padding:.3rem 1rem;border-radius:50px;margin-bottom:2rem;opacity:.85;
+}
+
+.hero-card{
+  background:var(--cream);border-radius:28px;
+  border:3.5px solid var(--ink);
+  box-shadow:0 0 0 3.5px var(--ink),6px 6px 0 var(--ink);
+  padding:2.8rem 2.2rem 2.5rem;
+  max-width:580px;width:100%;position:relative;margin-bottom:3rem;
+}
+.hero-card::before{
+  content:'';position:absolute;top:-5px;left:10px;right:10px;height:5px;
+  background:linear-gradient(90deg,#e63946,#f4a261,#2a9d8f,#457b9d,#9b59ff,#e63946);
+  border-radius:4px 4px 0 0;
+}
+.hero-card h1{font-family:'Fredoka One',cursive;font-size:clamp(2rem,6vw,3.2rem);line-height:1.05;margin-bottom:.7rem;letter-spacing:.3px}
+.hero-card h1 .w1{color:var(--blue)}.hero-card h1 .w2{color:var(--orange-red)}.hero-card h1 .w3{color:var(--green)}
+.hero-card p{font-size:1rem;line-height:1.72;color:#333;margin-bottom:1.8rem}
+.hero-card p strong{color:var(--blue)}
+.hero-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.btn{font-family:'Fredoka One',cursive;font-size:1rem;letter-spacing:.3px;padding:.65rem 1.6rem;border-radius:14px;border:2.5px solid var(--ink);text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s;cursor:pointer}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.btn:active{transform:translate(1px,1px);box-shadow:1px 1px 0 var(--ink)}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-yellow{background:var(--yellow);color:var(--ink)}
+.btn-white{background:#fff;color:var(--ink)}
+
+/* ── TICKER ── */
+.ticker{background:var(--orange-red);padding:.6rem 0;overflow:hidden;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.ticker-inner{display:flex;width:max-content;animation:tick 22s linear infinite}
+.ticker-inner span{font-family:'Fredoka One',cursive;font-size:1rem;letter-spacing:.8px;color:#fff;padding:0 2rem;white-space:nowrap}
+.ticker-inner .sep{color:var(--yellow);padding:0!important}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SHARED ── */
+.section{padding:5rem 1.5rem}
+.section-inner{max-width:1050px;margin:0 auto}
+.section-label{font-family:'Fredoka One',cursive;font-size:.78rem;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:.5rem;display:block}
+.section-title{font-family:'Fredoka One',cursive;font-size:clamp(1.9rem,4.5vw,2.9rem);line-height:1.05;margin-bottom:.8rem;letter-spacing:.3px}
+.section-sub{font-size:1rem;line-height:1.72;max-width:500px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ── WHY SECTION (amber/yellow) ── */
+.why-section{background:var(--amber);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.why-section .section-label{color:var(--red)}
+.why-section .section-title{color:var(--ink)}
+.why-section .section-sub{color:#4a2800}
+
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.1rem;margin-top:2.5rem}
+.why-card{
+  background:#fff;border:2.5px solid var(--ink);border-radius:18px;
+  padding:1.6rem;box-shadow:4px 4px 0 var(--ink);
+  position:relative;overflow:hidden;
+  transition:transform .2s,box-shadow .2s;
+}
+.why-card:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.why-top-stripe{height:4px;position:absolute;top:0;left:0;right:0}
+.why-card:nth-child(1) .why-top-stripe{background:var(--blue)}
+.why-card:nth-child(2) .why-top-stripe{background:var(--green)}
+.why-card:nth-child(3) .why-top-stripe{background:var(--orange-red)}
+.why-card:nth-child(4) .why-top-stripe{background:var(--yellow);border-top:1px solid #ccc}
+.why-icon{font-size:2rem;margin:1rem 0 .75rem;display:block}
+.why-title{font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--ink);margin-bottom:.45rem}
+.why-desc{font-size:.87rem;color:#444;line-height:1.65}
+
+/* ── HOW TO (navy) ── */
+.howto-section{background:var(--navy);padding:5rem 1.5rem}
+.howto-section .section-label{color:var(--yellow)}
+.howto-section .section-title{color:#fff}
+.howto-section .section-sub{color:rgba(255,255,255,.65)}
+
+.steps{display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem;max-width:700px}
+.step{
+  background:var(--cream);border:2.5px solid var(--ink);border-radius:18px;
+  padding:1.4rem 1.5rem;display:flex;gap:1.2rem;align-items:flex-start;
+  box-shadow:4px 4px 0 var(--ink);
+  transition:transform .2s,box-shadow .2s;
+}
+.step:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.step-num{
+  width:40px;height:40px;flex-shrink:0;
+  border-radius:12px;border:2.5px solid var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fredoka One',cursive;font-size:1.2rem;
+  box-shadow:2px 2px 0 var(--ink);
+}
+.step:nth-child(1) .step-num{background:var(--blue);color:#fff}
+.step:nth-child(2) .step-num{background:var(--orange-red);color:#fff}
+.step:nth-child(3) .step-num{background:var(--green);color:#fff}
+.step:nth-child(4) .step-num{background:var(--yellow);color:var(--ink)}
+.step:nth-child(5) .step-num{background:var(--navy);color:#fff}
+.step-title{font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--ink);margin-bottom:.3rem}
+.step-desc{font-size:.87rem;color:#444;line-height:1.62;margin-bottom:.4rem}
+.step-link{
+  display:inline-flex;align-items:center;gap:.3rem;
+  font-family:'Fredoka One',cursive;font-size:.85rem;
+  color:var(--blue);text-decoration:none;transition:gap .15s;
+}
+.step-link:hover{gap:.5rem;text-decoration:underline}
+
+/* ── PERKS (cream bg) ── */
+.perks-section{background:var(--cream);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:5rem 1.5rem}
+.perks-section .section-label{color:var(--orange-red)}
+.perks-section .section-title{color:var(--ink)}
+.perks-section .section-sub{color:#444}
+
+.perks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:1rem;margin-top:2.5rem}
+.perk{
+  background:#fff;border:2.5px solid var(--ink);border-radius:16px;
+  padding:1.4rem 1.1rem;text-align:center;
+  box-shadow:4px 4px 0 var(--ink);
+  transition:transform .2s,box-shadow .2s;
+}
+.perk:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.perk-icon{font-size:2rem;display:block;margin-bottom:.75rem}
+.perk-title{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--ink);margin-bottom:.35rem}
+.perk-desc{font-size:.8rem;color:#555;line-height:1.55}
+
+/* quote card */
+.quote-card{
+  margin-top:2.5rem;
+  background:var(--ink);color:#fff;
+  border-radius:20px;border:2.5px solid var(--ink);
+  padding:2.2rem 2.5rem;
+  box-shadow:5px 5px 0 rgba(0,0,0,.25);
+  position:relative;overflow:hidden;
+  max-width:720px;
+}
+.quote-card::before{
+  content:'\201C';font-family:'Fredoka One',cursive;font-size:9rem;
+  color:rgba(255,255,255,.06);position:absolute;top:-20px;left:15px;line-height:1;
+}
+.q-text{
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(1rem,2.5vw,1.4rem);line-height:1.5;
+  color:var(--yellow);margin-bottom:.9rem;position:relative;
+}
+.q-credit{font-size:.82rem;color:rgba(255,255,255,.55)}
+
+/* ── PARTNERS (amber) ── */
+.partners-section{background:var(--amber);border-top:3px solid var(--ink);padding:5rem 1.5rem}
+.partners-section .section-label{color:var(--red)}
+.partners-section .section-title{color:var(--ink)}
+.partners-section .section-sub{color:#4a2800}
+
+.partner-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.partner-badge{
+  display:flex;align-items:center;gap:.65rem;
+  background:#fff;border:2.5px solid var(--ink);border-radius:12px;
+  padding:.7rem 1.2rem;font-weight:700;font-size:.88rem;
+  box-shadow:3px 3px 0 var(--ink);color:var(--ink);
+  transition:transform .15s,box-shadow .15s;
+}
+.partner-badge:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.pb-icon{font-size:1.3rem}
+
+/* ── FAN WALL (navy) ── */
+.fanwall-section{background:var(--navy);padding:5rem 1.5rem}
+.fanwall-section .section-label{color:var(--yellow)}
+.fanwall-section .section-title{color:#fff}
+.fanwall-section .section-sub{color:rgba(255,255,255,.65)}
+
+.form-wrap{
+  background:var(--cream);border:3px solid var(--ink);border-radius:24px;
+  padding:2.5rem;box-shadow:6px 6px 0 var(--ink);
+  max-width:620px;margin:2.5rem auto 0;
+  position:relative;
+}
+.form-wrap::before{
+  content:'';position:absolute;top:-5px;left:10px;right:10px;height:5px;
+  background:linear-gradient(90deg,#e63946,#f4a261,#2a9d8f,#457b9d,#9b59ff,#e63946);
+  border-radius:4px 4px 0 0;
+}
+.form-title{font-family:'Fredoka One',cursive;font-size:1.6rem;color:var(--ink);margin-bottom:.3rem}
+.form-sub{font-size:.88rem;color:#666;margin-bottom:2rem;line-height:1.6}
+
+.field{margin-bottom:1.15rem}
+.field label{display:block;font-size:.78rem;font-weight:800;color:#555;margin-bottom:.4rem;letter-spacing:.3px;text-transform:uppercase}
+.field input,.field select,.field textarea{
+  width:100%;padding:.82rem 1.05rem;
+  background:#fff;border:2px solid var(--ink);border-radius:10px;
+  font-family:'Nunito',sans-serif;font-size:.92rem;color:var(--ink);
+  outline:none;transition:border-color .2s,box-shadow .2s;
+  box-shadow:2px 2px 0 var(--ink);
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--blue);box-shadow:2px 2px 0 var(--blue);
+}
+.field input::placeholder,.field textarea::placeholder{color:#aaa}
+.field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23111' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:2.5rem}
+.field select option{background:#fff;color:var(--ink)}
+.field textarea{resize:vertical;min-height:95px}
+
+.form-submit{
+  width:100%;font-family:'Fredoka One',cursive;font-size:1.1rem;
+  background:var(--orange-red);color:#fff;
+  padding:1rem;border-radius:12px;border:2.5px solid var(--ink);
+  cursor:pointer;box-shadow:4px 4px 0 var(--ink);
+  transition:transform .15s,box-shadow .15s;margin-top:.3rem;
+}
+.form-submit:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.form-submit:active{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink)}
+
+/* ── CTA (amber) ── */
+.cta-section{
+  background:var(--yellow);border-top:3px solid var(--ink);
+  padding:5rem 1.5rem;text-align:center;
+}
+.cta-section .section-title{color:var(--ink)}
+.cta-section p{font-size:1rem;color:#4a2800;line-height:1.72;max-width:480px;margin:0 auto 2.2rem}
+.cta-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--orange-red);border-top:3px solid var(--ink);
+  padding:2rem 1.8rem;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.foot-logo{font-family:'Fredoka One',cursive;font-size:1.4rem;display:flex;align-items:center;gap:2px}
+.foot-logo .t{color:var(--blue)}.foot-logo .l{color:var(--yellow)}.foot-logo .g{color:#fff}
+.foot-note{font-size:.78rem;color:rgba(255,255,255,.75);margin-top:.2rem}
+.foot-note a{color:#fff}
+.foot-links{display:flex;gap:1.2rem;flex-wrap:wrap}
+.foot-links a{font-family:'Fredoka One',cursive;font-size:.9rem;color:rgba(255,255,255,.75);text-decoration:none;transition:color .2s}
+.foot-links a:hover{color:#fff}
+.foot-soc{display:flex;gap:.6rem;margin-top:.5rem}
+.foot-soc-btn{
+  width:44px;height:44px;background:#fff;border:2px solid var(--ink);border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;font-size:1.1rem;color:var(--ink);
+  box-shadow:2px 2px 0 var(--ink);transition:transform .15s,box-shadow .15s;
+}
+.foot-soc-btn:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink)}
+
+/* toast */
+.toast{
+  position:fixed;bottom:2rem;right:2rem;z-index:500;
+  background:var(--ink);border:2.5px solid var(--green);
+  color:#fff;padding:1rem 1.5rem;border-radius:16px;
+  font-family:'Fredoka One',cursive;font-size:1rem;
+  display:flex;align-items:center;gap:.6rem;
+  box-shadow:4px 4px 0 rgba(0,0,0,.3);
+  transform:translateY(100px);opacity:0;
+  transition:all .4s cubic-bezier(.34,1.56,.64,1);
+  pointer-events:none;
+}
+.toast.show{transform:translateY(0);opacity:1}
+
+@media(max-width:600px){
+  .nav{padding:.65rem 1rem}
+  .nav-links a:not(.nav-cta){display:none}
+  .page-hero{padding:4rem 1.1rem 0}
+  .hero-card{padding:2rem 1.3rem}
+  .hero-card h1{font-size:2rem}
+  .section,.howto-section,.perks-section,.partners-section,.fanwall-section,.cta-section{padding:3.5rem 1.1rem}
+  footer{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="t">T</span><span class="l">L</span><span class="g">G</span>&nbsp;fan site
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="c1">← Home</a>
+    <a href="#why" class="c2">Why Join</a>
+    <a href="#howto" class="c3">Get In</a>
+    <a href="#fanwall" class="nav-cta">Fan Wall ✍️</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="dot dot1"></div>
+  <div class="dot dot2"></div>
+  <div class="dot dot3"></div>
+  <div class="dot dot4"></div>
+
+  <div class="page-tag">🌍 Community Hub</div>
+
+  <div class="hero-card">
+    <h1>
+      <span class="w1">More Than</span><br/>
+      <span class="w2">an NFT.</span><br/>
+      <span class="w3">A Movement.</span>
+    </h1>
+    <p>
+      The Little Guys is building something real - a full creative world for families, kids, and collectors alike. Here's how to plug in, why it matters, and how to show your support as a fan.
+    </p>
+    <div class="hero-btns">
+      <a href="#why" class="btn btn-blue">Why Join?</a>
+      <a href="#howto" class="btn btn-yellow">How to Get In</a>
+      <a href="#fanwall" class="btn btn-white">Sign the Fan Wall ✍️</a>
+    </div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>THE LITTLE GUYS</span><span class="sep">★</span>
+    <span>JOIN THE COMMUNITY</span><span class="sep">★</span>
+    <span>UNBOX THE UNEXPECTED</span><span class="sep">★</span>
+    <span>WEB3 + ANIMATION</span><span class="sep">★</span>
+    <span>FAMILY FIRST</span><span class="sep">★</span>
+    <span>FAN SUPPORTED</span><span class="sep">★</span>
+    <span>THE LITTLE GUYS</span><span class="sep">★</span>
+    <span>JOIN THE COMMUNITY</span><span class="sep">★</span>
+    <span>UNBOX THE UNEXPECTED</span><span class="sep">★</span>
+    <span>WEB3 + ANIMATION</span><span class="sep">★</span>
+    <span>FAMILY FIRST</span><span class="sep">★</span>
+    <span>FAN SUPPORTED</span><span class="sep">★</span>
+  </div>
+</div>
+
+<!-- WHY -->
+<section id="why" class="why-section section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Why It Matters</span>
+      <h2 class="section-title">What makes this different</h2>
+      <p class="section-sub">This isn't hype. It's a project with a real origin, real partners, and a real shot at going mainstream.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal" style="transition-delay:.05s">
+        <div class="why-top-stripe"></div>
+        <span class="why-icon">👶</span>
+        <div class="why-title">Born From Real Love</div>
+        <div class="why-desc">Started from the founder's two-year-old daughter. The mission is to bottle childlike wonder and bring it on-chain. There's a genuine soul to this project that most can't manufacture.</div>
+      </div>
+      <div class="why-card reveal" style="transition-delay:.1s">
+        <div class="why-top-stripe"></div>
+        <span class="why-icon">🎬</span>
+        <div class="why-title">Animated Series in Progress</div>
+        <div class="why-desc">TIME Studios - Emmy Award-winning producers - are actively working on an animated children's series. A Web3 project going full Hollywood. That's rare.</div>
+      </div>
+      <div class="why-card reveal" style="transition-delay:.15s">
+        <div class="why-top-stripe"></div>
+        <span class="why-icon">🤝</span>
+        <div class="why-title">Real Brand Collabs</div>
+        <div class="why-desc">BAYC, Cool Cats, CASETiFY, American Eagle - these aren't small names. The fact they're all involved tells you the credibility behind this project is real.</div>
+      </div>
+      <div class="why-card reveal" style="transition-delay:.2s">
+        <div class="why-top-stripe"></div>
+        <span class="why-icon">🎮</span>
+        <div class="why-title">Web3 With Real Utility</div>
+        <div class="why-desc">Staking in Playside, leaderboards, 1-UP Arcade, Build-A-LITLS - holders don't just hold art, they play, earn, and engage in a living ecosystem.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO GET IN -->
+<section id="howto" class="howto-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Getting Started</span>
+      <h2 class="section-title">How to join the squad</h2>
+      <p class="section-sub">Whether you're a collector, a fan parent, or just Web3 curious - here's your five-step entry point.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal" style="transition-delay:.06s">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Visit the Official Site</div>
+          <div class="step-desc">Start at the source. Learn about the world, the characters, and the mission directly from the team. Everything else builds from here.</div>
+          <a href="https://www.thelittleguys.io" target="_blank" class="step-link">thelittleguys.io ↗</a>
+        </div>
+      </div>
+      <div class="step reveal" style="transition-delay:.12s">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Follow on Twitter / X</div>
+          <div class="step-desc">All announcements, sneak peeks, collabs, and community moments happen here first. This is where you stay in the loop.</div>
+          <a href="https://twitter.com/thelittleguysio" target="_blank" class="step-link">@thelittleguysio ↗</a>
+        </div>
+      </div>
+      <div class="step reveal" style="transition-delay:.18s">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Jump into the Discord</div>
+          <div class="step-desc">The heartbeat of the community. Chat with holders, catch AMAs, get whitelisted, join giveaways and events. This is where you actually become part of it.</div>
+          <a href="https://discord.gg/thelittleguys" target="_blank" class="step-link">Join Discord ↗</a>
+        </div>
+      </div>
+      <div class="step reveal" style="transition-delay:.24s">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Grab a Little Guy on OpenSea</div>
+          <div class="step-desc">Coming Soon</div>
+        </div>
+      </div>
+      <div class="step reveal" style="transition-delay:.3s">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-title">Share the Energy</div>
+          <div class="step-desc">Post. Retweet. Tell your people. Fan energy is literally what gives projects like this the fuel to go from niche to global. Sign the wall below and let your voice be heard.</div>
+          <a href="#fanwall" class="step-link">Sign the Fan Wall ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERKS -->
+<section class="perks-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">Holder Benefits</span>
+      <h2 class="section-title">What you get as a supporter</h2>
+      <p class="section-sub">Owning a Little Guy isn't just about the art - it's about what it unlocks.</p>
+    </div>
+    <div class="perks-grid">
+      <div class="perk reveal" style="transition-delay:.06s">
+        <span class="perk-icon">🎮</span>
+        <div class="perk-title">Playside Game</div>
+        <div class="perk-desc">Play the browser game with your NFT, earn staking rewards and climb the leaderboard.</div>
+      </div>
+      <div class="perk reveal" style="transition-delay:.1s">
+        <span class="perk-icon">🎟</span>
+        <div class="perk-title">Exclusive Events</div>
+        <div class="perk-desc">Early access to IRL activations, AMAs, and holder-only community meetups.</div>
+      </div>
+      <div class="perk reveal" style="transition-delay:.14s">
+        <span class="perk-icon">📦</span>
+        <div class="perk-title">Merch Drops</div>
+        <div class="perk-desc">First dibs on physical merchandise, limited edition drops and collectibles.</div>
+      </div>
+      <div class="perk reveal" style="transition-delay:.18s">
+        <span class="perk-icon">⭐</span>
+        <div class="perk-title">Whitelist Priority</div>
+        <div class="perk-desc">Guaranteed spots for future collection drops and second-gen mints.</div>
+      </div>
+      <div class="perk reveal" style="transition-delay:.22s">
+        <span class="perk-icon">📺</span>
+        <div class="perk-title">Series Updates</div>
+        <div class="perk-desc">Behind-the-scenes access to the TIME Studios animated series progress.</div>
+      </div>
+      <div class="perk reveal" style="transition-delay:.26s">
+        <span class="perk-icon">🏆</span>
+        <div class="perk-title">Staking Rewards</div>
+        <div class="perk-desc">Earn in Playside through participation, staking, and in-game competition.</div>
+      </div>
+    </div>
+
+    <div class="quote-card reveal" style="transition-delay:.3s">
+      <div class="q-text">"The littles aims to help rekindle our childlike faith in the world - just like the way a child approaches the world in complete rawness reminds us of forgotten days."</div>
+      <div class="q-credit">- The Little Guys Official Whitepaper</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners-section">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-label">The Ecosystem</span>
+      <h2 class="section-title">Who's already in their world</h2>
+      <p class="section-sub">The partnerships speak for themselves - this is not an isolated project.</p>
+    </div>
+    <div class="partner-row">
+      <div class="partner-badge reveal"><span class="pb-icon">🎬</span> TIME Studios</div>
+      <div class="partner-badge reveal" style="transition-delay:.05s"><span class="pb-icon">🌊</span> OpenSea</div>
+      <div class="partner-badge reveal" style="transition-delay:.1s"><span class="pb-icon">🦍</span> Bored Ape YC</div>
+      <div class="partner-badge reveal" style="transition-delay:.15s"><span class="pb-icon">🐱</span> Cool Cats</div>
+      <div class="partner-badge reveal" style="transition-delay:.2s"><span class="pb-icon">👗</span> American Eagle</div>
+      <div class="partner-badge reveal" style="transition-delay:.25s"><span class="pb-icon">📱</span> CASETiFY</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAN WALL -->
+<section id="fanwall" class="fanwall-section">
+  <div class="section-inner">
+    <div style="text-align:center" class="reveal">
+      <span class="section-label">Fan Wall</span>
+      <h2 class="section-title">Leave your mark ✍️</h2>
+      <p class="section-sub" style="margin:0 auto">Sign the wall. Let the team know a supporter out here is watching, believing, and rooting for this adventure every step of the way.</p>
+    </div>
+    <div class="form-wrap reveal" style="transition-delay:.1s">
+      <div class="form-title">🤝 Fan Sign-Up</div>
+      <div class="form-sub">Drop your name and show The Little Guys some love. No spam - pure fan energy only.</div>
+      <form id="fanForm" onsubmit="handleSubmit(event)">
+        <div class="field">
+          <label>Your Name</label>
+          <input type="text" name="name" placeholder="What do they call you?" required/>
+        </div>
+        <div class="field">
+          <label>Twitter / X Handle</label>
+          <input type="text" name="twitter" placeholder="@yourhandle"/>
+        </div>
+        <div class="field">
+          <label>Your Status</label>
+          <select name="status">
+            <option>I own a Little Guy 🎉</option>
+            <option>Saving up - buying soon 💪</option>
+            <option>Just here for the vibe ✨</option>
+            <option>Fan parent - here for the animated series 📺</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Message to the Team</label>
+          <textarea name="message" placeholder="What do The Little Guys mean to you? What are you most excited about?"></textarea>
+        </div>
+        <button type="submit" class="form-submit">✦ Sign the Fan Wall</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:580px;margin:0 auto">
+      <h2 class="section-title">The adventure starts now 🚀</h2>
+      <p>The world is being built. The animated series is coming. The community is growing. Don't wait to be part of something heading somewhere real.</p>
+      <div class="cta-btns">
+        <a href="https://www.thelittleguys.io" target="_blank" class="btn btn-blue">Official Site ↗</a>
+        <a href="index.html" class="btn btn-yellow">← Back to Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="foot-logo">
+      <span class="t">T</span><span class="l">L</span><span class="g">G</span>&nbsp;Fan World
+    </div>
+    <div class="foot-note">Fan site - not affiliated with <a href="https://www.thelittleguys.io" target="_blank">thelittleguys.io</a>. All rights belong to the official team.</div>
+    <div class="foot-soc">
+      <a href="https://twitter.com/thelittleguysio" target="_blank" class="foot-soc-btn" title="X / Twitter">𝕏</a>
+      <a href="https://discord.gg/thelittleguys" target="_blank" class="foot-soc-btn" title="Discord">💬</a>
+    </div>
+  </div>
+  <div class="foot-links">
+    <a href="index.html">Home</a>
+    <a href="#why">Why Join</a>
+    <a href="#howto">Get In</a>
+    <a href="#fanwall">Fan Wall</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast">🎉 You're on the fan wall! The Little Guys see you.</div>
+
+<script>
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbx7xXYOaG3RxXMhxtw2u71Z8IDoBRqbRgsOERTnnevOQ0eYM5XqKRDxEj8aixcNeflo/exec';
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = form.querySelector('.form-submit');
+  const t    = document.getElementById('toast');
+
+  // grab by name attribute — reliable regardless of DOM order
+  const name    = form.querySelector('[name="name"]').value.trim();
+  const twitter = form.querySelector('[name="twitter"]').value.trim();
+  const status  = form.querySelector('[name="status"]').value;
+  const message = form.querySelector('[name="message"]').value.trim();
+
+  btn.textContent = '⏳ Signing...';
+  btn.disabled = true;
+
+  const params = new URLSearchParams({ name, twitter, status, message });
+  const url = `${SHEET_URL}?${params.toString()}`;
+
+  // Image ping — most reliable way to hit Google Apps Script without CORS issues
+  const img = new Image();
+  img.src = url;
+
+  img.onload = img.onerror = function() {
+    t.textContent = "🎉 You're on the fan wall! The Little Guys see you.";
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4500);
+    form.reset();
+    btn.textContent = '✦ Sign the Fan Wall';
+    btn.disabled = false;
+  };
+
+  // Fallback timeout in case neither fires
+  setTimeout(() => {
+    btn.textContent = '✦ Sign the Fan Wall';
+    btn.disabled = false;
+  }, 5000);
+}
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
